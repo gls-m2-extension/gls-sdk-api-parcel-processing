@@ -1,7 +1,7 @@
 {
   "name": "gls-m2-extension/sdk-api-parcel-processing",
   "description": "GLS Web API for Parcel Processing SDK",
-  "version": "1.4",
+  "version": "1.4.1",
   "license": "MIT",
   "keywords": [
     "php",
@@ -14,7 +14,6 @@
     "ext-json": "*",
     "netresearch/jsonmapper": "^4.0.0 || ^5.0.0",
     "php-http/discovery": "^1.10.0",
-    "php-http/httplug": "^2.2.0",
     "php-http/logger-plugin": "^1.2.1",
     "psr/http-client": "^1.0.1",
     "psr/http-client-implementation": "^1.0.0",

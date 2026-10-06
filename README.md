@@ -15,7 +15,6 @@ The GLS Parcel Processing API SDK package offers an interface to the following w
 
 - `netresearch/jsonmapper`: Mapper for deserialization of JSON response messages into PHP objects
 - `php-http/discovery`: Discovery service for HTTP client and message factory implementations
-- `php-http/httplug`: Pluggable HTTP client abstraction
 - `php-http/logger-plugin`: HTTP client logger plugin for HTTPlug
 - `psr/http-client`: PSR-18 HTTP client interfaces
 - `psr/http-factory`: PSR-7 HTTP message factory interfaces
@@ -24,7 +23,9 @@ The GLS Parcel Processing API SDK package offers an interface to the following w
 
 ### Virtual Package Requirements
 
-- `psr/http-client-implementation`: Any package that provides a PSR-18 compatible HTTP client
+- `psr/http-client-implementation`: Any PSR-18 compatible HTTP client, e.g. `guzzlehttp/guzzle` (≥ 7),
+  `symfony/http-client`, or `kriswallsmith/buzz`. Magento 2.4+ ships with `guzzlehttp/guzzle ^7` which
+  satisfies this requirement automatically — no extra adapter is needed.
 - `psr/http-factory-implementation`: Any package that provides PSR-7 compatible HTTP message factories
 - `psr/http-message-implementation`: Any package that provides PSR-7 HTTP messages
 

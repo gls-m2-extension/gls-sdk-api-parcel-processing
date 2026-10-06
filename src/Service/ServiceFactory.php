@@ -14,7 +14,7 @@ use GlsGroup\Sdk\ParcelProcessing\Api\ShipmentServiceInterface;
 use GlsGroup\Sdk\ParcelProcessing\Exception\ServiceExceptionFactory;
 use GlsGroup\Sdk\ParcelProcessing\Http\HttpServiceFactory;
 use Http\Discovery\Exception\NotFoundException;
-use Http\Discovery\HttpClientDiscovery;
+use Http\Discovery\Psr18ClientDiscovery;
 use Psr\Log\LoggerInterface;
 
 class ServiceFactory implements ServiceFactoryInterface
@@ -41,7 +41,7 @@ class ServiceFactory implements ServiceFactoryInterface
         bool $sandboxMode = false
     ): ShipmentServiceInterface {
         try {
-            $httpClient = HttpClientDiscovery::find();
+            $httpClient = Psr18ClientDiscovery::find();
         } catch (NotFoundException $exception) {
             throw ServiceExceptionFactory::create($exception);
         }
@@ -57,7 +57,7 @@ class ServiceFactory implements ServiceFactoryInterface
         bool $sandboxMode = false
     ): CancellationServiceInterface {
         try {
-            $httpClient = HttpClientDiscovery::find();
+            $httpClient = Psr18ClientDiscovery::find();
         } catch (NotFoundException $exception) {
             throw ServiceExceptionFactory::create($exception);
         }

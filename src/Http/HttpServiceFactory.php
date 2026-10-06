@@ -22,8 +22,8 @@ use Http\Client\Common\Plugin\ContentLengthPlugin;
 use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
 use Http\Client\Common\Plugin\LoggerPlugin;
 use Http\Client\Common\PluginClient;
-use Http\Client\HttpClient;
 use Http\Discovery\Exception\NotFoundException;
+use Psr\Http\Client\ClientInterface;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Message\Authentication\BasicAuth;
 use Http\Message\Formatter\FullHttpMessageFormatter;
@@ -32,7 +32,7 @@ use Psr\Log\LoggerInterface;
 class HttpServiceFactory implements ServiceFactoryInterface
 {
     /**
-     * @var HttpClient
+     * @var ClientInterface
      */
     private $httpClient;
 
@@ -44,10 +44,10 @@ class HttpServiceFactory implements ServiceFactoryInterface
     /**
      * HttpServiceFactory constructor.
      *
-     * @param HttpClient $httpClient
+     * @param ClientInterface $httpClient
      * @param string $acceptLanguage
      */
-    public function __construct(HttpClient $httpClient, string $acceptLanguage = '')
+    public function __construct(ClientInterface $httpClient, string $acceptLanguage = '')
     {
         $this->httpClient = $httpClient;
         $this->acceptLanguage = $acceptLanguage;
